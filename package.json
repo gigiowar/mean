@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gigiowar/mean/issues"
   },
-  "homepage": "https://github.com/gigiowar/mean#readme"
+  "homepage": "https://github.com/gigiowar/mean#readme",
+  "dependencies": {
+    "express": "^4.8.8"
+  }
 }
