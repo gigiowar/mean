@@ -1,0 +1,19 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "This project is a example to how to use the M.E.A.N technologies to make a basic client list app, and is composed by three pages:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigiowar/mean.git"
+  },
+  "author": "Giovanni Abate Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigiowar/mean/issues"
+  },
+  "homepage": "https://github.com/gigiowar/mean#readme"
+}
