@@ -1,0 +1,19 @@
+{
+  "name": "mean",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gigiowar/mean",
+  "authors": [
+    "Giovanni Abate Neto <g_abateneto@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  }
+}
