@@ -1,10 +1,15 @@
 <!doctype html>
-<html>
+<html ng-app="mean">
 	<head>
 		<meta charset="UTF-8">
 		<title>Clientes</title>
 	</head>
-	<body>
-		<h1>Bem vindo a área administrativa de Clientes</h1>
+	<body ng-controller="ClientesController">
+		<div ng-view></div>
+		<script type="text/javascript" src="vendor/angular/angular.js"></script>
+		<script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/controllers/ClientesController.js"></script>
+		<script type="text/javascript" src="js/controllers/ClienteController.js"></script>
 	</body>
 </html>
