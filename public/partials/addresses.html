@@ -1,25 +1,29 @@
 <div class="jumbotron">
 	<h1 class="text-center">
-		Área administrativa de Clientes 
+		Lista de Endereços
 	</h1>
 </div>
 <button class="btn btn-primary" ng-click="incrementa()">
 	Novo
 </button>
-<input ng-model="filtro" type="search" placeholder="nome"></input>
-<p>Clientes cadastrados: {{total}}</p>
+<input ng-model="filtro" type="search" placeholder="endereco"></input>
+<p>Endereços cadastrados: {{total}}</p>
 <div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
-			<th>NOME</th>
-			<th>EMAIL</th>
+			<th>ENDEREÇO</th>
+			<th>NÚMERO</th>
+			<th>CIDADE</th>
+			<th>ESTADO</th>
 			<th class="text-center">Ação</th>
 		</tr>
-		<tr ng-repeat="cliente in clientes | filter:filtro">
+		<tr ng-repeat="endereco in enderecos | filter:filtro">
 			<td>
-				<a>{{cliente.nome}}</a>
+				<a>{{endereco.endereco}}</a>
 			</td>
-			<td>{{cliente.email}}</td>
+			<td>{{endereco.numero}}</td>
+			<td>{{endereco.cidade}}</td>
+			<td>{{endereco.estado}}</td>
 			<td class="text-center">
 				<button class="btn btn-warning">
 					Remover

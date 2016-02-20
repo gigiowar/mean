@@ -10,15 +10,15 @@ angular.module("mean",["ngRoute"]).config(function($routeProvider) {
 		controller: "UserController"
 	});
 
-	// $routeProvider.when("/adresses",{
-	// 	templateUrl: "partials/adresses.html",
-	// 	controller: "AdressesController"
-	// });
+	$routeProvider.when("/addresses",{
+		templateUrl: "partials/addresses.html",
+		controller: "AddressesController"
+	});
 
-	// $routeProvider.when("/adresses/:adressId",{
-	// 	templateUrl: "partials/adress.html",
-	// 	controller: "AdressController"
-	// });
+	$routeProvider.when("/address/:addressId",{
+		templateUrl: "partials/address.html",
+		controller: "AddressController"
+	});
 
 	// $routeProvider.when("/orderers",{
 	// 	templateUrl: "partials/orderers.html",
