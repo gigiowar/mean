@@ -14,6 +14,7 @@ Requirements:
 - Nodejs (https://nodejs.org/)
 
 Instructions:
+
 1. Clone or download the entire project (https://github.com/gigiowar/mean.git)
 2. Inside the project folder(mean folder) run npm install
 3. In a command line inside the project folder, use the command "node server"
