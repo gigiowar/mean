@@ -1,11 +1,8 @@
-angular.module("mean").controller("UsersController",function($scope){
+angular.module("mean").controller("UsersController",function($scope, $resource){
 
-	$scope.total = 0;
-	$scope.incrementa = function(){
-		$scope.total++;
-	};
+	//$scope.users =[];
 
-	$scope.clientes = [
+	$scope.users = [
 		{
 			"_id": 1,
 			"nome": "Giovanni Abate",
@@ -21,9 +18,42 @@ angular.module("mean").controller("UsersController",function($scope){
 			"nome": "Giovanni Abate 3",
 			"email": "giovanni3@empresa.com.br"
 		}			
-	];
+	];		
+
+	$scope.mensagem = {texto:""};
 
 	$scope.filtro = "";
+	
+	var User = $resource("#/users/:id");
 
+	function buscaUsers(){
+
+		// User.query(
+		// 	function(users){
+		// 		$scope.users = users;
+		// 	},
+		// 	function(erro){
+		// 		console.log(erro);
+		// 		$scope.mensagem = {
+		// 			texto:"Não foi possível obter a lista"
+		// 		};
+				
+		// 	}
+		// );
+
+	}
+	buscaUsers();
+
+	// $scope.remove = function(user){
+	// 	User.delete({id: user._id},
+	// 		buscaUsers,
+	// 		function(erro){
+	// 			console.log(erro);
+	// 			$scope.mensagem = {
+	// 				texto:"Não foi possível remover o contato"
+	// 			};
+	// 		}
+	// 	);
+	// };
 
 });
