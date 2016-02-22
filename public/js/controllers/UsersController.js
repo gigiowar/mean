@@ -4,8 +4,6 @@ angular.module("mean").controller("UsersController",function(User, $scope){
 
 	$scope.mensagem = {texto:""};
 
-	$scope.filtro = "";
-
 	function buscaUsers(){
 		User.query(
 			function(users){
