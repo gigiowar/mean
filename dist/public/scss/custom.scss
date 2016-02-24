@@ -1,3 +1,10 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 header{
 	.navbar-default{
 		.container{
@@ -33,7 +40,8 @@ header{
 .container{
 	background-color: #F4F5F7;
 	.jumbotron{
-		border-radius: 0 0 80px 80px;
+		/*border-radius: 0 0 80px 80px;*/
+		@include border-radius(0 0 80px 80px);
 		background-color:#195a99;
 		padding: 20px;
 		h1{
@@ -48,7 +56,7 @@ header{
 		right: 10%;
 
 		input{
-			border-radius: 10px;
+			@include border-radius(10px);
 			padding: 5px 10px;
 			border: none;
 		}
@@ -67,7 +75,7 @@ header{
 		float: left;
 		margin: 0 10px;
 		height: 200px;
-		border-radius: 0 20px;
+		@include border-radius(0 20px);
 	    text-align: center;
 	    padding: 5px;
 	}
