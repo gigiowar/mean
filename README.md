@@ -41,4 +41,8 @@ Technologies use explanation:
 
 	-Node is used to make a back-end of this application because your code is javascript based, that makes more simple to integrate with the other selected technologies, and is perfect to make REST aplications.	
 
+5.Sass:
+
+	-Sass is used to create the custom styles for the application, the objective is to make themes for the application, but is not implemented yet	
+
 

@@ -6,40 +6,18 @@
 <p ng-show="mensagem.texto">
 	{{mensagem.texto}}
 </p>
-<p>
-<!-- 	<a class="btn btn-primary" ng-href="#/order">
-		Novo Pedido
-	</a>	 -->
-</p>
-
-<div class="table-responsive">
-	<table class="table table-hover">
-		<tr>
-			<th><input ng-model="nome" type="search" placeholder="nome"></input></th>
-			<th><input ng-model="sku" type="search" placeholder="sku"></input></th>
-			<th></th>
-			<th></th>
-		</tr>
-		<tr>
-			<th>NOME</th>
-			<th>SKU</th>
-			<th>IMAGEM</th>
-<!-- 			<th class="text-center">Ação</th> -->
-		</tr>
-		<tr ng-repeat="pedido in pedidos | filter:nome | filter:sku">
-			<td>{{pedido.nome}}</td>
-			<td>{{pedido.sku}}</td>
-			<td><img src="{{pedido.imagem}}" /><td>
-			<td class="text-center">
-<!-- 				<button  ng-click="remove(pedido)" class="btn btn-warning">
-					Remover
-				</button> -->
-			</td>		
-		</tr>
-	</table>
+<div class="filters-box">
+	<input ng-model="nome" type="search" placeholder="Filtre os resultados aqui"></input>
+	<span class="glyphicon glyphicon-search"></span>
 </div>
-<p ng-show="pedidos.length">
-	Pedidos cadastrados: {{pedidos.length}}</p>
-<p class="text-info" ng-hide="pedidos.length">
-	Não há pedidos cadastrados
-</p>	
+<div class="list-boxes">	
+	<div class="list-box" ng-repeat="pedido in pedidos | filter:nome | filter:sku">
+		<div class="box-img">
+			<img src="{{pedido.imagem}}" height="110px" width="110px" />
+		</div>
+		<div class="box-body">
+			<p>{{pedido.nome}}</p>
+			<p>{{pedido.sku}}</p>
+		</div>
+	</div>
+</div>	

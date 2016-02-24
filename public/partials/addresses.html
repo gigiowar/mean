@@ -1,42 +1,31 @@
 <div class="jumbotron">
 	<h1 class="text-center">
-		Lista de Endereços 
+		Lista de Pedidos 
 	</h1>
 </div>
 <p ng-show="mensagem.texto">
 	{{mensagem.texto}}
 </p>
-<p>
-<!-- 	<a class="btn btn-primary" ng-href="#/order">
-		Novo Endereço
-	</a>	 -->
-</p>
-
-<div class="table-responsive">
-	<table class="table table-hover">
-		<tr>
-			<th><input ng-model="endereco" type="search" placeholder="endereco"></input></th>
-			<th><input ng-model="numero" type="search" placeholder="numero"></input></th>
-			<th><input ng-model="cidade" type="search" placeholder="cidade"></input></th>
-			<th><input ng-model="estado" type="search" placeholder="estado"></input></th>
-
-		</tr>
-		<tr>
-			<th>ENDEREÇO</th>
-			<th>NÚMERO</th>
-			<th>CIDADE</th>
-			<th>ESTADO</th>
-		</tr>
-		<tr ng-repeat="endereco in enderecos | filter:endereco | filter:numero | filter:cidade | filter:estado">
-			<td>{{endereco.endereco}}</td>
-			<td>{{endereco.numero}}</td>
-			<td>{{endereco.cidade}}</td>
-			<td>{{endereco.estado}}</td>	
-		</tr>
-	</table>
+<div class="filters-box">
+	<input ng-model="endereco" type="search" placeholder="Filtre os resultados aqui"></input>
+	<span class="glyphicon glyphicon-search"></span>
 </div>
-<p ng-show="enderecos.length">
-	Endereços cadastrados: {{enderecos.length}}</p>
-<p class="text-info" ng-hide="enderecos.length">
-	Não há endereços cadastrados
-</p>	
+<div class="list-boxes">	
+	<div class="list-box" ng-repeat="endereco in enderecos | filter:endereco | filter:numero | filter:cidade | filter:estado">
+		<div class="box-img">
+			<img src="/img/location.png" height="110px" width="110px" />
+		</div>
+		<div class="box-body">
+			<p>
+				<span>{{endereco.endereco}}</span>
+				<span>{{endereco.numero}}</span>
+			</p>
+			<p>
+				<span>{{endereco.cidade}}</span>
+			</p>
+			<p>
+				<span>{{endereco.estado}}</span>
+			</p>
+		</div>
+	</div>
+</div>	

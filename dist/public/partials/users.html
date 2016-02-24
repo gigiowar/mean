@@ -6,41 +6,31 @@
 <p ng-show="mensagem.texto">
 	{{mensagem.texto}}
 </p>
-<div class="table-list">
-	<p>
-		<a class="btn btn-primary" ng-href="#/user">
-			Novo Cliente
-		</a>	
-	</p>
-	<div class="table-responsive">
-		<table class="table table-hover">
-			<tr>
-				<th><input ng-model="nome" type="search" placeholder="nome"></input></th>
-				<th><input ng-model="email" type="search" placeholder="email"></input></th>
-				<th></th>
-			</tr>
-			<tr>
-				<th>NOME</th>
-				<th>EMAIL</th>
-				<th class="text-center">Ação</th>
-			</tr>
-			<tr ng-repeat="user in users | filter:nome | filter:email">
-				<td>
-					<a ng-href="#/user/{{user._id}}">{{user.nome}}</a>
-				</td>
-				<td>{{user.email}}</td>
-				<td class="text-center">
-					<button  ng-click="remove(user)" class="btn btn-warning">
-						Remover
-					</button>
-				</td>		
-			</tr>
-		</table>
+<div class="filters-box">
+	<input ng-model="nome" type="search" placeholder="Filtre os resultados aqui"></input>
+	<span class="glyphicon glyphicon-search"></span>
+</div>
+<div class="list-boxes">
+	<div class="list-box new">
+		<a ng-href="#/user">
+			<div class="box-img">
+				<img src="/img/adicionar.png" height="110px" width="110px" />
+			</div>
+			Adicionar novo cliente
+		</a>
+	</div>	
+	<div class="list-box" ng-repeat="user in users | filter:nome | filter:email">
+		<div class="box-img">
+			<img src="/img/user.png" height="110px" width="110px" />
+		</div>
+		<div class="box-body">
+			<a ng-href="#/user/{{user._id}}">{{user.nome}}</a>
+			<p>{{user.email}}</p>
+		</div>
+		<div class="box-buttons">
+			<button  ng-click="remove(user)" class="exclude-button">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
+		</div>
 	</div>
-	<p ng-show="users.length">
-		Clientes cadastrados: {{users.length}}
-	</p>	
-	<p class="text-info" ng-hide="users.length">
-		Não há contatos cadastrados
-	</p>
 </div>
