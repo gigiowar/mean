@@ -1,3 +1,52 @@
-body.container{
-	background: blue;	
-}   
+header{
+	.navbar-default{
+		background-color: #1A75CE;
+		background-image: none;
+	    margin-bottom: 0;
+	    border: none;
+	    border-radius: 0;
+	}
+	.navbar-default{
+		.navbar-nav{
+			> li > a {
+				color: #FFF;
+			}
+			> li > a:hover{
+				color: #f6b428;
+			}
+		}
+		.navbar-brand {
+			color: #FFF;
+			span{
+				color: #f6b428;
+			}
+		}
+	}	
+}
+
+.container{
+	.jumbotron{
+		border-radius: 0 0 80px 80px;
+		background-color:#195a99;
+		padding: 20px;
+		h1{
+			font-size: 28px;
+			margin: 0;
+			color: #f6b428;
+		}
+	}
+	.table-list{
+	    padding: 0 60px;
+	}
+	.btn{
+		padding: 10px 41px 9px 41px;
+	}
+	.btn-primary{
+		background-color: #176bbd;
+    	border-color: transparent transparent #07628f;
+	}
+	.btn-primary:hover{
+		background-position: 0;
+	}
+} 
+			
