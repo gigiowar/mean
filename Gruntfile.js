@@ -17,7 +17,6 @@ module.exports = function(grunt){
 		compass: {
 			compile: {
 				options: {
-					httpPath: 'public',
 					cssDir:'dist/public/css',
 					sassDir: 'public/scss',
 					imagesDir: '/public/img',
