@@ -15,40 +15,24 @@ module.exports = function(grunt){
 			}
 		},
 		compass: {
-			scss: {
-                options: {
-                }
-            },
 			compile: {
 				options: {
-					httpPath: '/public',
-					cssDir:'/dist/public/css',
-					sassDir: '/public/scss',
+					httpPath: 'public',
+					cssDir:'dist/public/css',
+					sassDir: 'public/scss',
 					imagesDir: '/public/img',
-					outputStyle: 'expanded',
+					outputStyle: 'compressed',
 					relativeAssets: true,
 					raw: 'preferred_syntax = :scss\n',
 					force: true,
 					time : true
 				},
 			},
-			deploy: {
-				options: {
-					httpPath: 'public',
-					cssDir:'dist/public/css',
-					sassDir: 'public/scss',
-					imagesDir: 'public/img',
-					outputStyle: 'compressed',
-					relativeAssets: true,
-					raw: 'preferred_syntax = :scss\n',
-					force: true
-				},
-			}
-		},		
+		}
 	});
 
-	grunt.registerTask("default",["dist"]);
-	grunt.registerTask("dist",["clean","copy","compass"]);
+	grunt.registerTask("default",["compass"]);
+	//grunt.registerTask("dist",["clean","copy","compass"]);
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-compass");	
