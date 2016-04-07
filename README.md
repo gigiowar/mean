@@ -17,7 +17,8 @@ Requirements:
 Instructions:
 
 1. Clone or download the entire project (https://github.com/gigiowar/mean.git)
-2. Inside the project folder(mean folder) in a command line, run npm install
+2. Inside the project folder(mean folder) in a command line, run "npm install"
+3. In the same folder run "grunt"
 3. In a command line inside the "dist" folder, use the command "node server"
 4. Install and configure MongoDB
 5. Run MongoDB server (mongod)
