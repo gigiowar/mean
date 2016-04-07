@@ -22,7 +22,7 @@
     "express": "^4.8.8",
     "express-load": "^1.1.15",
     "mongodb": "^1.4.40",
-    "mongoose": "^3.8.39"
+    "mongoose": "^4.4.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
