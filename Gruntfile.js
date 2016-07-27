@@ -4,8 +4,8 @@ module.exports = function(grunt){
 		copy:{
 			project:{
 				expand: true,
-				cwd: ".",
-				src:["**","!Gruntfile.js","!package.json","!bower.json","!README.md"],
+				cwd: "src",
+				src: '**/*',
 				dest:"dist"
 			}
 		},
@@ -18,8 +18,8 @@ module.exports = function(grunt){
 			compile: {
 				options: {
 					cssDir:'dist/public/css',
-					sassDir: 'public/scss',
-					imagesDir: '/public/img',
+					sassDir: 'src/public/scss',
+					imagesDir: 'src/public/img',
 					outputStyle: 'compressed',
 					relativeAssets: true,
 					raw: 'preferred_syntax = :scss\n',
@@ -30,7 +30,7 @@ module.exports = function(grunt){
 		}
 	});
 
-	grunt.registerTask("default",["compass"]);
+	grunt.registerTask("default",["clean","copy","compass"]);
 	//grunt.registerTask("dist",["clean","copy","compass"]);
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
