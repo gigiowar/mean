@@ -3,4 +3,5 @@ angular.module("mean").controller("OrderController",
 
 		console.log($routeParams.orderId);
 
-	});
+	}
+);

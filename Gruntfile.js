@@ -31,7 +31,7 @@ module.exports = function(grunt){
 	});
 
 	grunt.registerTask("default",["clean","copy","compass"]);
-	//grunt.registerTask("dist",["clean","copy","compass"]);
+	grunt.registerTask("dist",["clean","copy","compass"]);
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-compass");	
