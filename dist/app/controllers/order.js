@@ -1,6 +1,7 @@
 module.exports = function (app){
 
 	var Order = app.models.order;
+	var User = app.models.user;
 
 	var controller = {};
 
@@ -46,36 +47,53 @@ module.exports = function (app){
 
 	controller.salvaOrder = function (req,res){
 		console.log("salvaOrder");	
-		var _id = req.body._user;
+		var _id = req.body._id;
 		var dados = { 
+			"user_email" : req.body.email,
 			"sku" : req.body.sku,
 			"nome" : req.body.nome,
 			"imagem" : req.body.imagem
-		};		
-		if(_id){
-			Order.findByIdAndUpdate(_id, dados).exec()
-			.then(
-				function(order){
-					res.json(order);
-				},
-				function(erro){
-					console.error(erro);
-					res.status(500).json(erro);
-				}
-			);
-		}
-		else{
-			Order.create(dados)
-			.then(
-				function(order){
-					res.status(201).json(order);
-				},
-				function(erro){
-					console.log(erro);
-					res.status(500).json(erro);
-				}
-			)
-		}
+		};
+
+		User.findOne({ email: req.body.email }).exec()
+		.then(
+			function(user){
+				if(user){
+					if(_id){
+						Order.findByIdAndUpdate(_id, dados).exec()
+						.then(
+							function(order){
+								res.json(order);
+							},
+							function(erro){
+								console.error(erro);
+								res.status(500).json(erro);
+							}
+						);
+					}
+					else{
+						Order.create(dados)
+						.then(
+							function(order){
+								res.status(201).json(order);
+							},
+							function(erro){
+								console.log(erro);
+								res.status(500).json(erro);
+							}
+						)
+					}	
+				}	
+				else{
+					res.status(406).json("email não existente");
+				}			
+			
+			},
+			function(erro){
+				console.error(erro);
+				res.status(500).json(erro);
+			}
+		);
 	};
 
 	return controller;

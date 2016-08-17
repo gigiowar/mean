@@ -2,8 +2,8 @@ var mongoose = require("mongoose");
 
 module.exports = function(){
 	var schema = mongoose.Schema({
-		_user:{
-			type:mongoose.Schema.Types.ObjectId,
+		user_email:{
+			type:String,
 			required:true
 		},
 		sku:{

@@ -2,7 +2,7 @@ angular.module("mean").controller("OrderController",
 	function($scope, $routeParams, Order){
 		
 		Order.query(function(orders) {
-			console.log("Chamou lista de contatos");
+			console.log("Chamou lista de pedidos");
 			$scope.orders = orders;
 		});
 
@@ -14,14 +14,14 @@ angular.module("mean").controller("OrderController",
 				},
 				function(erro){
 					$scope.mensagem = {
-						texto: "Não foi possível obter o contato"
+						texto: "Não foi possível obter o pedido"
 					};
 					console.log(erro);
 				}
 			);
 		}
 		else{
-			console.log("Cria novo contato");
+			console.log("Cria novo pedido");
 			$scope.order = new Order();
 		}
 

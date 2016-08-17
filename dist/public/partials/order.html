@@ -8,9 +8,12 @@
 </p>
 <form ng-submit="salva()">
 	<div class="form-group">
-		<label for="nome">Id Cliente</label>
-		<input type="text" class="form-control" id="id_user" name="id_user" required ng-model="order._user">
-	</div>
+		<label for="email">Email</label>
+		<div class="input-group">
+			<span class="input-group-addon">@</span>
+			<input type="text" class="form-control" id="email" name="email" placeholder="email@exemplo.com" required ng-model="order.email">
+		</div>
+	</div>	
 	<div class="form-group">
 		<label for="sku">Sku</label>
 		<div class="input-group">
