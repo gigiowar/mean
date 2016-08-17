@@ -37,6 +37,11 @@ angular.module("mean",["ngRoute","ngResource"])
 		controller: "OrderController"
 	});	
 
+	$routeProvider.when("/order",{
+		templateUrl: "partials/order.html",
+		controller: "OrderController"
+	});
+
 	$routeProvider.otherwise({redirectTo: '/users'});
 
 });

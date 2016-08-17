@@ -1,11 +1,15 @@
-<h1 class="text-center">Pedido</h1>
+<div class="jumbotron">
+	<h1 class="text-center">
+		Pedido 
+	</h1>
+</div>
 <p ng-show="mensagem.texto">
 	{{mensagem.texto}}
 </p>
 <form ng-submit="salva()">
 	<div class="form-group">
 		<label for="nome">Id Cliente</label>
-		<input type="text" class="form-control" id="id_user" name="id_user" required ng-model="user._id">
+		<input type="text" class="form-control" id="id_user" name="id_user" required ng-model="order._user">
 	</div>
 	<div class="form-group">
 		<label for="sku">Sku</label>

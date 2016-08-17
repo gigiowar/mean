@@ -1,35 +1,13 @@
-angular.module("mean").controller("OrdersController",function($scope){
+angular.module("mean").controller("OrdersController",function(Order, $scope){
 
-	/*	$scope.pedidos = [
-			{
-				"_id": 1,
-				"nome": "Teste teste",
-				"sku": "123456",
-				"imagem": "/img/fallout4.jpg"
-			},
-			{
-				"_id": 2,
-				"nome": "Teste teste",
-				"sku": "789012",
-				"imagem": "/img/mortal-kombat.jpg"
-			},
-			{
-				"_id": 3,
-				"nome": "Teste teste",
-				"sku": "345678",
-				"imagem": "/img/starwars.jpg"
-			}			
-		];
-	*/
-
-	$scope.pedidos = [];		
+	$scope.orders = [];		
 
 	$scope.mensagem = {texto:""};
 
-	function buscaUsers(){
-		User.query(
-			function(pedidos){
-				$scope.pedidos = pedidos;
+	function buscaOrders(){
+		Order.query(
+			function(orders){
+				$scope.orders = orders;
 				$scope.mensagem = {};
 			},
 			function(erro){
@@ -42,11 +20,11 @@ angular.module("mean").controller("OrdersController",function($scope){
 		);
 
 	}
-	buscaUsers();
+	buscaOrders();
 
-	$scope.remove = function(user){
-		User.delete({id: user._id},
-			buscaUsers,
+	$scope.remove = function(order){
+		Order.delete({id: order._id},
+			buscaOrders,
 			function(erro){
 				console.log(erro);
 				$scope.mensagem = {

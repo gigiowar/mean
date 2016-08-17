@@ -1,6 +1,6 @@
 module.exports = function (app){
 
-	var User = app.models.order;
+	var Order = app.models.order;
 
 	var controller = {};
 
@@ -53,10 +53,10 @@ module.exports = function (app){
 			"imagem" : req.body.imagem
 		};		
 		if(_id){
-			User.findByIdAndUpdate(_id, dados).exec()
+			Order.findByIdAndUpdate(_id, dados).exec()
 			.then(
-				function(user){
-					res.json(user);
+				function(order){
+					res.json(order);
 				},
 				function(erro){
 					console.error(erro);
@@ -65,10 +65,10 @@ module.exports = function (app){
 			);
 		}
 		else{
-			User.create(dados)
+			Order.create(dados)
 			.then(
-				function(user){
-					res.status(201).json(user);
+				function(order){
+					res.status(201).json(order);
 				},
 				function(erro){
 					console.log(erro);

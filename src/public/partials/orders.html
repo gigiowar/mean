@@ -10,14 +10,27 @@
 	<input ng-model="nome" type="search" placeholder="Filtre os resultados aqui"></input>
 	<span class="glyphicon glyphicon-search"></span>
 </div>
-<div class="list-boxes">	
-	<div class="list-box" ng-repeat="pedido in pedidos | filter:nome | filter:sku">
-		<div class="box-img">
-			<img src="{{pedido.imagem}}" height="110px" width="110px" />
-		</div>
+<div class="list-boxes">
+	<div class="list-box new">
+		<a ng-href="#/order">
+			<div class="box-img">
+				<img src="/img/adicionar.png" height="110px" width="110px" />
+			</div>
+			Adicionar novo pedido
+		</a>
+	</div>	
+	<div class="list-box" ng-repeat="order in orders | filter:nome | filter:sku">
+<!-- 		<div class="box-img">
+			<img src="/img/user.png" height="110px" width="110px" />
+		</div> -->
 		<div class="box-body">
-			<p>{{pedido.nome}}</p>
-			<p>{{pedido.sku}}</p>
+			<p>{{order.nome}}</p>
+			<p>{{order.sku}}</p>
+		</div>
+		<div class="box-buttons">
+			<button  ng-click="remove(order)" class="exclude-button">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
 		</div>
 	</div>
-</div>	
+</div>
