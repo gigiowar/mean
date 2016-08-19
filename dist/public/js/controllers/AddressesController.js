@@ -1,31 +1,37 @@
-angular.module("mean").controller("AddressesController",function($scope){
+angular.module("mean").controller("AddressesController",function(Order, $scope){
 
-	$scope.enderecos = [
-		{
-			"_id": 1,
-			"nome":"Teste teste",
-			"endereco": "Rua Teste",
-			"numero": "01",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		},
-		{
-			"_id": 2,
-			"nome":"Teste teste",
-			"endereco": "Rua Teste 2",
-			"numero": "02",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		},
-		{
-			"_id": 3,
-			"nome":"Teste2 teste",
-			"endereco": "Rua Teste 3",
-			"numero": "03",
-			"cidade": "São Paulo",
-			"estado": "SP"
-		}			
-	];
+	$scope.addresses = [];		
 
+	$scope.mensagem = {texto:""};
+
+	function buscaAddress(){
+		Order.query(
+			function(addresses){
+				$scope.addresses = addresses;
+				$scope.mensagem = {};
+			},
+			function(erro){
+				console.log(erro);
+				$scope.mensagem = {
+					texto:"Não foi possível obter a lista"
+				};
+				
+			}
+		);
+
+	}
+	buscaAddress();
+
+	$scope.remove = function(address){
+		Order.delete({id: address._id},
+			buscaAddress,
+			function(erro){
+				console.log(erro);
+				$scope.mensagem = {
+					texto:"Não foi possível remover o contato"
+				};
+			}
+		);
+	};
 
 });

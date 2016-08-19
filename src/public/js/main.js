@@ -26,6 +26,11 @@ angular.module("mean",["ngRoute","ngResource"])
 		controller: "AddressController"
 	});
 
+	$routeProvider.when("/address",{
+		templateUrl: "partials/address.html",
+		controller: "AddressController"
+	});
+
 	$routeProvider.when("/orders",{
 		templateUrl: "partials/orders.html",
 		controller: "OrdersController"

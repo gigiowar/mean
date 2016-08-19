@@ -1,1 +1,41 @@
-<h1>Endereço</h1>
+<div class="jumbotron">
+	<h1 class="text-center">
+		Pedido 
+	</h1>
+</div>
+<p ng-show="mensagem.texto">
+	{{mensagem.texto}}
+</p>
+<form ng-submit="salva()">
+	<div class="form-group">
+		<label for="email">Email</label>
+		<div class="input-group">
+			<span class="input-group-addon">@</span>
+			<input type="text" class="form-control" id="email" name="email" placeholder="email@exemplo.com" required ng-model="address.email">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="rua">Rua</label>
+		<div class="input-group">
+			<input type="text" class="form-control" id="rua" name="rua" required ng-model="address.rua">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="cidade">Cidade</label>
+		<div class="input-group">
+			<input type="text" class="form-control" id="cidade" name="cidade" required ng-model="address.cidade">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="sku">Estado</label>
+		<div class="input-group">
+			<input type="text" class="form-control" id="estado" name="estado" required ng-model="address.estado">
+		</div>
+	</div>				
+	<div>
+		<button type="submit" class="btn btn-primary">
+			Salvar
+		</button>
+		<a href="#/" class="btn btn-default">Voltar</a>
+	</div>
+</form>
