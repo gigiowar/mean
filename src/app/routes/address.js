@@ -1,13 +1,13 @@
 module.exports = function (app){
 
-	var controller = app.controllers.order;
+	var controller = app.controllers.address;
 
 	app.route("/addresses")
-		.get(controller.listaOrders)
-		.post(controller.salvaOrder);
+		.get(controller.listaAddresses)
+		.post(controller.salvaAddress);
 
 	app.route("/addresses/:id")
-		.get(controller.obtemOrder)
-		.delete(controller.removeOrder);
+		.get(controller.obtemAddress)
+		.delete(controller.removeAddress);
 
 };

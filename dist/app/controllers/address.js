@@ -5,7 +5,7 @@ module.exports = function (app){
 
 	var controller = {};
 
-	controller.listaAddresss = function(req,res){
+	controller.listaAddresses = function(req,res){
 		var promise = Address.find().exec()
 			.then(
 				function(addresses){

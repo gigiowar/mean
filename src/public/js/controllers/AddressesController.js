@@ -1,11 +1,11 @@
-angular.module("mean").controller("AddressesController",function(Order, $scope){
+angular.module("mean").controller("AddressesController",function(Address, $scope){
 
 	$scope.addresses = [];		
 
 	$scope.mensagem = {texto:""};
 
 	function buscaAddress(){
-		Order.query(
+		Address.query(
 			function(addresses){
 				$scope.addresses = addresses;
 				$scope.mensagem = {};
@@ -23,12 +23,12 @@ angular.module("mean").controller("AddressesController",function(Order, $scope){
 	buscaAddress();
 
 	$scope.remove = function(address){
-		Order.delete({id: address._id},
+		Address.delete({id: address._id},
 			buscaAddress,
 			function(erro){
 				console.log(erro);
 				$scope.mensagem = {
-					texto:"Não foi possível remover o contato"
+					texto:"Não foi possível remover o endereco"
 				};
 			}
 		);

@@ -16,12 +16,14 @@
 			<div class="box-img">
 				<img src="/img/adicionar.png" height="110px" width="110px" />
 			</div>
-			Adicionar novo pedido
+			<div class="box-body">
+				Adicionar novo pedido
+			</div>
 		</a>
 	</div>	
 	<div class="list-box" ng-repeat="order in orders | filter:nome | filter:sku">
  		<div class="box-img">
-			<img src="{{order.imagem}}"/>
+			<img ng-src="{{order.imagem}}" onerror="this.src='/img/missing_product_image.jpg';">
 		</div>
 		<div class="box-body">
 			<a ng-href="#/order/{{order._id}}">{{order.nome}}</a>
